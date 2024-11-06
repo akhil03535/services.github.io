@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Development Services</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('images/hero-bg.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 120px 0;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    #services .card {
+      transition: transform 0.3s;
+    }
+
+    #services .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-title {
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">ProDev Services</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="vh-100 d-flex align-items-center justify-content-center">
+    <div class="text-center">
+      <h1 class="display-4">Professional Development Services</h1>
+      <p class="lead">Your trusted partner for Web Development, App Development, and Cybersecurity Solutions.</p>
+      <a href="#services" class="btn btn-primary mt-3">Explore Our Services</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="container text-center section">
+    <h2>About Us</h2>
+    <p>We are a dedicated team of professionals specializing in creating powerful, secure, and user-centric digital solutions. With expertise across website development, mobile app development, and cybersecurity, we help businesses build a digital presence and secure their operations.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container section">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="row">
+      <!-- Website Development -->
+      <div class="col-md-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Website Development</h5>
+            <p class="card-text">Custom website design and development that aligns with your brand and engages your audience. We specialize in responsive, SEO-friendly, and modern designs to enhance your online presence.</p>
+          </div>
+        </div>
+      </div>
+      <!-- App Development -->
+      <div class="col-md-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">App Development</h5>
+            <p class="card-text">End-to-end mobile application development for iOS and Android platforms. We create intuitive, robust, and scalable mobile applications that provide a seamless experience for your users.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Cybersecurity -->
+      <div class="col-md-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Cybersecurity</h5>
+            <p class="card-text">Protect your digital assets with our comprehensive cybersecurity solutions. We help secure networks, applications, and data with advanced protocols and tools to prevent potential threats.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container section">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 ProDev Services. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Smooth Scrolling for Navbar Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Form Validation for Contact Form
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from submitting immediately
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      let valid = true;
+
+      if (name === "") {
+        alert("Please enter your name.");
+        valid = false;
+      }
+      if (email === "" || !validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        valid = false;
+      }
+      if (message === "") {
+        alert("Please enter a message.");
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Thank you! Your message has been sent.");
+        this.reset(); // Reset form after successful submission
+      }
+    });
+
+    // Helper function to validate email format
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(String(email).toLowerCase());
+    }
+  </script>
+</body>
+</html>
